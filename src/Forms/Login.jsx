@@ -44,14 +44,18 @@ function Login() {
         Password: "",
         });
         localStorage.setItem("token",res.data.token);
-        navigate("/");
+        if(res.data.msg === 'user login successfully')
+        {
+          navigate("/");
+        }
+        else{
+          navigate("/login")
+        }
         // console.log(Fstate);
       // console.log(dataAxios.data)
     })
     .catch((err) =>{
       console.log(err);
-      navigate("/login")
-
     })
 
   }
