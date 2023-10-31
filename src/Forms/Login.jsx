@@ -46,7 +46,7 @@ function Login() {
         localStorage.setItem("token",res.data.token);
         navigate("/");
         // console.log(Fstate);
-      // console.log(dataAxios.data)
+      console.log(dataAxios.data)
     })
     .catch((err) =>{
       console.log(err);
