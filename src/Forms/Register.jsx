@@ -47,7 +47,7 @@ function Register() {
     
 
     try{
-      const dataAxios = await axios.post('https://handson-4.onrender.com/api/register',saveData)
+       await axios.post('http://localhost:9000/api/register',saveData)
       .then((res) =>{
         alert(res.data.msg);
         setFstate({ RegisterData: Fstate.RegisterData,
@@ -59,7 +59,7 @@ function Register() {
         localStorage.setItem("token",res.data.token);
         navigate("/login");
         // console.log(Fstate);
-      console.log(dataAxios.data)
+      // console.log(dataAxios.data)
     })
     .catch((err) =>{
       console.log(err);

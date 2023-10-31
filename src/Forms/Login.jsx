@@ -36,7 +36,7 @@ function Login() {
     // console.log(saveData);
  
     try{
-      const dataAxios = await axios.post('https://handson-4.onrender.com/api/login',saveData)
+       await axios.post('http://localhost:9000/api/login',saveData)
       .then((res) =>{
         alert(res.data.msg);
         setFstate({ LoginData: Fstate.LoginData,
@@ -46,10 +46,12 @@ function Login() {
         localStorage.setItem("token",res.data.token);
         navigate("/");
         // console.log(Fstate);
-      console.log(dataAxios.data)
+      // console.log(dataAxios.data)
     })
     .catch((err) =>{
       console.log(err);
+      navigate("/login")
+
     })
 
   }
