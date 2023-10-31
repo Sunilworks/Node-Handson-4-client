@@ -6,7 +6,7 @@ function Home() {
   const token = localStorage.getItem("token")
   useEffect(() => {
       if(token){
-        axios.get("http://localhost:9000",{headers:{
+        axios.get("https://handson-4.onrender.com",{headers:{
           "authorization":`Bearer ${token}`}})
           .then(res => console.log(res.data))
       }
